@@ -6,12 +6,14 @@ import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Contact from "./Contact";
 import { HeartSwitch } from '@anatoliygatt/heart-switch';
+import { useDarkMode } from "./DarkModeContext";
 
 const Main = (props) => {
     const downloadCvRef = useRef(null);
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const [checked, setChecked] = useState(false);
     const { active, setActive } = useContext(Context);
+    // const [isDarkMode, setIsDarkMode] = useContext(false);
+    const { isDarkMode, setIsDarkMode } = useDarkMode();
 
     useEffect(() => {
         const body = document.querySelector('body');
@@ -81,13 +83,13 @@ const Main = (props) => {
                     <button onClick={() => setActive('about')}>Change Data</button> */}
                     {
                         active === 'homepage' ?
-                            <Homescreen downloadCvRef={downloadCvRef} />
+                            <Homescreen downloadCvRef={downloadCvRef} isDarkMode={isDarkMode} />
                             : active === 'about' ?
-                                <AboutMe />
+                                <AboutMe isDarkMode={isDarkMode} />
                                 : active === 'experience' ?
-                                    <Experience />
+                                    <Experience isDarkMode={isDarkMode} />
                                     :
-                                    <Contact />
+                                    <Contact isDarkMode={isDarkMode} />
                     }
                 </div>
             </div>
