@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
     font-family: 'Montserrat';
     src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
@@ -65,15 +61,15 @@ a:hover {
     cursor: pointer;
 }
 
-.container {
+.containerer {
     position: relative;
     display: flex;
     border: 1px black solid;
     height: 90%;
-    width: 96%;
+    /* width: 96%; */
 }
 
-.container.dark {
+.containerer.dark {
     border: 1px white solid
 }
 
@@ -87,7 +83,6 @@ a:hover {
 
 .vertical-navbar button {
     writing-mode: vertical-lr;
-    transform: rotate(270deg);
     transform-origin: center;
     font-size: 0.9rem;
     margin: 0.5rem 0;

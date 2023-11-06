@@ -66,21 +66,19 @@ const Main = (props) => {
                     }}
                     onClick={() => setIsDarkMode(!isDarkMode)}
                 />
-                <button className={active === 'homepage' ? 'strikethrough' : ''} onClick={() => setActive('homepage')}>Home</button>
-                <button className={active === 'about' ? 'strikethrough' : ''} onClick={() => setActive('about')}>About</button>
-                <button className={active === 'experience' ? 'strikethrough' : ''} onClick={() => setActive('experience')}>Experience</button>
-                <button className={active === 'contact' ? 'strikethrough' : ''} onClick={() => setActive('contact')}>Contact</button>
+                <button className={`${active === 'homepage' ? 'strikethrough' : ''} rotate-180`} onClick={() => setActive('homepage')}>Home</button>
+                <button className={`${active === 'about' ? 'strikethrough' : ''} rotate-180`} onClick={() => setActive('about')}>About</button>
+                <button className={`${active === 'experience' ? 'strikethrough' : ''} rotate-180`} onClick={() => setActive('experience')}>Experience</button>
+                <button className={`${active === 'contact' ? 'strikethrough' : ''} rotate-180`} onClick={() => setActive('contact')}>Contact</button>
             </div>
-            <div className="flex-1 p-4 flex items-center">
+            <div className="flex-1 p-4 flex items-center w-full">
 
-                <div className={`container ${isDarkMode ? 'dark' : ''}`}>
+                <div className={`containerer w-full ${isDarkMode ? 'dark' : ''}`}>
                     <div className="gradient-container">
                         <div className="circle-gradient"></div>
                         <div className="second-gradient"></div>
                     </div>
 
-                    {/* <p>Data from context: {active}</p>
-                    <button onClick={() => setActive('about')}>Change Data</button> */}
                     {
                         active === 'homepage' ?
                             <Homescreen downloadCvRef={downloadCvRef} isDarkMode={isDarkMode} />
@@ -93,7 +91,7 @@ const Main = (props) => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
